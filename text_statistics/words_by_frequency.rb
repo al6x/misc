@@ -1,5 +1,8 @@
 # encoding: utf-8
 # 
+# Takes text file as an input and calculates the frequencies of occurrences words in text. 
+# Outputs file with words and it's frequencies sorted by frequency in descending order.
+# 
 # Usage: 
 # $ ruby words_by_frequency.rb harry_potter.txt
 # 

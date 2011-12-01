@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "#{File.dirname __FILE__}/git.rb"
+cmd = "git status"
+puts exec(cmd)
+each_submodule{puts puts exec(cmd)}
+
+ARGV

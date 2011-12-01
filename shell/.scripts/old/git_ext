@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+def submodules
+  unless @submodules
+    @submodules = [] 
+    output = `git submodule`.strip
+    
+    output.split("\n").each do |line|
+      line = line.strip
+      tokens = line.split(' ')
+      path = tokens[1]
+      @submodules << path if path and !path.empty?
+    end
+  end
+  return @submodules
+end
+
+def each_submodule command = "", &block
+  puts
+  submodules.each do |path|
+    puts "# Submodule: #{path}"
+    Dir.chdir path do
+      if block
+        block.call
+      else
+        puts `#{command}`
+      end
+    end
+    puts
+  end
+end
+
+def cl_each_submodule command
+  each_submodule command.first
+end
+
+command, args = ARGV
+args = [args] unless args.is_a? Array
+send "cl_#{command}", args

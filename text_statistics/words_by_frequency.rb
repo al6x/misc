@@ -26,7 +26,6 @@ end
 sorted_words = words.to_a.sort{|a, b| b[1] <=> a[1]}
 
 statistics_file = "#{text_file}.statistics.txt"
-
 File.open statistics_file, 'w' do |f|
   sorted_words.each do |word, frequency|
     f.puts "#{word} #{frequency}"

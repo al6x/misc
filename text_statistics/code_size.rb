@@ -1,3 +1,7 @@
+# 
+# Here's new and better version https://github.com/alexeypetrushin/code_stats
+# 
+
 # encoding: utf-8
 # 
 # Takes list of project with file filters as an input, and calculates total 
